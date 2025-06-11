@@ -1,10 +1,17 @@
 #include "MainWindow.hpp"
+#include "ui/loginPage/LoginPage.hpp"
 
 MainWindow::MainWindow(QWidget *parent) 
     : QMainWindow(parent)
 {
-    setWindowTitle("To-Do Management");
-    resize(800,600);
+    stackedWidget = new QStackedWidget(this);
+    setCentralWidget(stackedWidget);
+    setWindowTitle("Task Management");
+
+    loginPage = new LoginPage();
+
+    stackedWidget->addWidget(loginPage);
+
 }
 
 MainWindow::~MainWindow() {

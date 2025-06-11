@@ -2,6 +2,9 @@
 #define MAINWINDOW_HPP
 
 #include <QMainWindow>
+#include <QStackedWidget>
+
+class LoginPage;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -9,6 +12,10 @@ class MainWindow : public QMainWindow {
 public :
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private:
+    QStackedWidget *stackedWidget;
+    LoginPage *loginPage;
 };
 
 #endif
