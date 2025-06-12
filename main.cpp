@@ -26,7 +26,8 @@ int main(int argc, char *argv[]){
     app.setStyleSheet(loadMergedStyleSheets(qssFiles));
 
     MainWindow window;
-    window.showFullScreen();
+    // window.showFullScreen();
+    window.show();
 
     return app.exec();
 }

@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     loginPage = new LoginPage();
 
     stackedWidget->addWidget(loginPage);
-
+    loginPage->showMaximized();
 }
 
 MainWindow::~MainWindow() {

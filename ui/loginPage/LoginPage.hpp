@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
 class LoginPage : public QWidget {
     Q_OBJECT
@@ -10,6 +12,9 @@ class LoginPage : public QWidget {
 public:
     explicit LoginPage(QWidget *parent = nullptr);
 
+private:
+     QLineEdit* password;
+     QLineEdit* username;
 
 };
 
