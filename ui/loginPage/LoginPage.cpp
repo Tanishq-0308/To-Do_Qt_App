@@ -24,7 +24,7 @@ LoginPage::LoginPage(QWidget *parent) : QWidget(parent){
     
     QWidget* rightWidget = new QWidget(this);
     rightWidget->setMinimumSize(450,370);
-    rightWidget->setMaximumWidth(450); // Add this!
+    rightWidget->setMaximumWidth(450);
     rightWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     rightWidget->setObjectName("container");
 
