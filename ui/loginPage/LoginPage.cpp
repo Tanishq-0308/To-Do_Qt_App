@@ -12,7 +12,7 @@ LoginPage::LoginPage(QWidget *parent) : QWidget(parent){
     mainLayout->setContentsMargins(0,0,0,0);
 
     QLabel *leftImage = new QLabel();
-    leftImage->setPixmap(QPixmap(":assets/design.png").scaled(windowHeight,windowWidth,Qt::KeepAspectRatioByExpanding,Qt::SmoothTransformation));
+    leftImage->setPixmap(QPixmap(":assets/design.svg").scaled(windowHeight,windowWidth,Qt::KeepAspectRatioByExpanding,Qt::SmoothTransformation));
     // leftImage->setPixmap(QPixmap(":assets/design.png"));
     leftImage->setScaledContents(true);
     leftImage->setObjectName("leftContainer");
@@ -23,8 +23,8 @@ LoginPage::LoginPage(QWidget *parent) : QWidget(parent){
     rightContainer->setAlignment(Qt::AlignCenter);
     
     QWidget* rightWidget = new QWidget(this);
-    rightWidget->setMinimumSize(400,320);
-    rightWidget->setMaximumWidth(400); // Add this!
+    rightWidget->setMinimumSize(450,370);
+    rightWidget->setMaximumWidth(450); // Add this!
     rightWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     rightWidget->setObjectName("container");
 
@@ -33,22 +33,22 @@ LoginPage::LoginPage(QWidget *parent) : QWidget(parent){
     innerLayout->setSpacing(10);
     innerLayout->setAlignment(Qt::AlignCenter);
 
-    QLabel* title = new QLabel("Please sign in to Continue");
+    QLabel* title = new QLabel("Hello there !");
     title->setObjectName("title");
     title->setAlignment(Qt::AlignCenter);
 
-    QLabel* usernameLabel = new QLabel("Username");
+    QLabel* usernameLabel = new QLabel("Username or Email");
     usernameLabel->setObjectName("label");
 
     QLineEdit* username = new QLineEdit("");
-    username->setPlaceholderText("UserName");
+    username->setPlaceholderText("Enter your mail to login");
     username->setObjectName("inputField");
 
     QLabel* passwordLabel = new QLabel("Password");
     passwordLabel->setObjectName("label");
 
     QLineEdit* password = new QLineEdit("");
-    password->setPlaceholderText("Password");
+    password->setPlaceholderText("Enter password");
     password->setEchoMode(QLineEdit::Password);
     password->setObjectName("inputField");
 
@@ -67,6 +67,17 @@ LoginPage::LoginPage(QWidget *parent) : QWidget(parent){
 
     
 
-    mainLayout->addWidget(leftImage,1);
+    // mainLayout->addWidget(leftImage,1);
     mainLayout->addLayout(rightContainer,1);
+}
+
+void LoginPage::handleLogin() {
+    const QString user = username->text();
+    const QString pass = password->text();
+
+    if(user == "" && pass == ""){
+        emit loginSuccessful();
+    }else {
+        
+    }
 }

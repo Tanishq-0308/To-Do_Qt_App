@@ -12,9 +12,14 @@ class LoginPage : public QWidget {
 public:
     explicit LoginPage(QWidget *parent = nullptr);
 
+signals:
+    void loginSuccessful();
+
 private:
      QLineEdit* password;
      QLineEdit* username;
+
+     void handleLogin();
 
 };
 

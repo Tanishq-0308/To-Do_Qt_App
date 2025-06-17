@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/assets">
         <file>styles/login.qss</file>
-        <file>design.png</file>
+        <file>design.svg</file>
     </qresource>
 </RCC>
